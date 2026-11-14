@@ -1,0 +1,32 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+{%- set s = site -%}
+# {{ s.nom }} · {{ s.titre }}
+
+> {{ s.description_google }}
+
+## Contact et rendez-vous
+- Téléphone : {{ s.telephone }}
+- E-mail : {{ s.email }}
+- Instagram : @{{ s.instagram }}
+
+## Soins
+{% for soin in s.soins %}
+### {{ soin.titre }}
+{% for p in soin.points %}- {{ p }}
+{% endfor %}- {{ soin.infos }}
+{% endfor %}
+## Ostéopathie ou kinésithérapie ?
+{% for l in s.comparatif.lignes %}- {{ l.critere }} : ostéopathie : {{ l.osteo }} ; kinésithérapie : {{ l.kine }}
+{% endfor %}
+## Adresses
+{% for l in s.lieux %}- {{ l.etiquette }} : {{ l.titre }}{% if l.adresse %}, {{ l.adresse | replace("\n", ", ") }}{% endif %}{% if l.texte %}. {{ l.texte }}{% endif %}
+{% endfor %}
+## Parcours
+{% for f in s.parcours.formations %}- {{ f.annee }} : {{ f.titre }}{% if f.detail %} ({{ f.detail }}){% endif %}
+{% endfor %}{% for f in s.parcours.experiences %}- {{ f.annee }} : {{ f.titre }}{% if f.detail %} ({{ f.detail }}){% endif %}
+{% endfor %}
+## Site
+- {{ s.url }}/

@@ -1,0 +1,214 @@
+{
+  "url": "https://kineosteo-thomas.be",
+  "nom": "Thomas Lecuy",
+  "titre": "Ostéopathe D.O · Kinésithérapeute",
+  "description_google": "Thomas Lecuy, ostéopathe D.O et kinésithérapeute à Charleroi (Mont-sur-Marchienne, Lodelinsart) et à domicile.",
+  "telephone": "0475 35 14 43",
+  "email": "thomas.lecuy@hotmail.com",
+  "instagram": "tho.steo.fit",
+  "accueil": {
+    "zone": "Charleroi · Mont-sur-Marchienne · Lodelinsart",
+    "titre": "Reprenez votre santé en main.",
+    "texte": "Ostéopathie et kinésithérapie pour les douleurs du dos, de la nuque, des articulations et les blessures du sportif. Au cabinet ou à domicile, de l'enfant à la personne âgée.",
+    "photo": "",
+    "points_forts": [
+      {
+        "gras": "Kinésithérapeute",
+        "texte": "depuis 2014"
+      },
+      {
+        "gras": "Ostéopathe D.O",
+        "texte": "depuis 2018"
+      },
+      {
+        "gras": "Enseignant",
+        "texte": "à Condorcet et à la BSO"
+      }
+    ]
+  },
+  "soins": [
+    {
+      "titre": "Ostéopathie",
+      "photo": "",
+      "points": [
+        "Blocages articulaires : lombalgie, cervicalgie, douleur entre les omoplates",
+        "Douleurs musculaires : torticolis, tensions, maux de tête, épaule",
+        "Douleurs liées au geste sportif, bilan de prévention"
+      ],
+      "infos": "Avec ou sans prescription médicale. Cabinet de Mont-sur-Marchienne."
+    },
+    {
+      "titre": "Kinésithérapie au cabinet",
+      "photo": "",
+      "points": [
+        "Rachis : lombaires, dorsales, cervicales",
+        "Articulations périphériques, tendinopathies, entorses",
+        "Rééducation après opération, troubles respiratoires"
+      ],
+      "infos": "Sur prescription médicale, de l'enfant à la personne âgée. Hôpital Civil Marie Curie, Lodelinsart."
+    },
+    {
+      "titre": "Kinésithérapie à domicile",
+      "photo": "",
+      "points": [
+        "Pour les patients qui ne peuvent pas se déplacer",
+        "Même prise en charge qu'au cabinet"
+      ],
+      "infos": "Sur prescription médicale. Charleroi, Marcinelle, Mont-sur-Marchienne, Montigny-le-Tilleul."
+    }
+  ],
+  "comparatif": {
+    "intro": "Les deux approches se complètent. Ce tableau vous aide à savoir vers quoi vous orienter. En cas de doute, appelez : on en parle ensemble.",
+    "lignes": [
+      {
+        "critere": "Prescription",
+        "osteo": "Pas nécessaire",
+        "kine": "Prescription médicale requise"
+      },
+      {
+        "critere": "Idéal pour",
+        "osteo": "Douleur aiguë ou chronique, blocage, tension, prévention",
+        "kine": "Rééducation, suivi sur plusieurs séances, après une opération ou une entorse"
+      },
+      {
+        "critere": "Honoraires",
+        "osteo": "Tarif de la séance (à préciser)",
+        "kine": "Selon la convention INAMI, au cabinet ou à domicile"
+      },
+      {
+        "critere": "Où",
+        "osteo": "Mont-sur-Marchienne",
+        "kine": "Lodelinsart ou à domicile"
+      }
+    ],
+    "seance_osteo": [
+      "Entretien sur votre histoire et vos douleurs",
+      "Bilan pour écarter les risques et poser un diagnostic",
+      "Traitement : mobilisations, manipulations si nécessaire, étirements",
+      "Explication de l'origine de la douleur",
+      "Exercices de stabilisation à faire chez vous"
+    ],
+    "seance_kine": [
+      "Bilan selon la prescription de votre médecin",
+      "Objectifs fixés selon votre situation professionnelle et sportive",
+      "Traitement",
+      "Exercices thérapeutiques",
+      "Conseils et prévention"
+    ],
+    "remarque": "Douleur aiguë (lumbago, torticolis…) : il est souvent conseillé d'attendre 2 à 3 jours avant de consulter en ostéopathie."
+  },
+  "parcours": {
+    "intro": "Kinésithérapeute et ostéopathe, également enseignant et formateur en thérapie manuelle.",
+    "formations": [
+      {
+        "annee": "2024",
+        "titre": "La Clinique du coureur",
+        "detail": "« La science en pratique » et « PEACE & LOVE » (blessures aiguës)"
+      },
+      {
+        "annee": "2023",
+        "titre": "Formation sur l'épaule",
+        "detail": "Théorie et pratique, avec Jeremy Lewis"
+      },
+      {
+        "annee": "2020–2022",
+        "titre": "Certificat universitaire en thérapie manuelle",
+        "detail": "UCLouvain"
+      },
+      {
+        "annee": "2019–2020",
+        "titre": "Méthode McKenzie",
+        "detail": "Module A (lombaire) et module B (cervical)"
+      },
+      {
+        "annee": "2018",
+        "titre": "Ostéopathie D.O",
+        "detail": "Belgian School of Osteopathy"
+      },
+      {
+        "annee": "2015",
+        "titre": "Kinésithérapie analytique selon Sohier",
+        "detail": ""
+      },
+      {
+        "annee": "2014",
+        "titre": "Master en kinésithérapie",
+        "detail": "Haute École Condorcet, Montignies-sur-Sambre"
+      }
+    ],
+    "experiences": [
+      {
+        "annee": "Depuis 2023",
+        "titre": "Formateur à la SFER, Mons",
+        "detail": "Dizziness cervicogénique, épaule douloureuse, certificat en thérapie manuelle"
+      },
+      {
+        "annee": "Depuis 2021",
+        "titre": "Maître-assistant à Condorcet",
+        "detail": "Examens et bilans articulaires, neurodynamique, orthopédie-traumatologie-rhumatologie ; promoteur de mémoires"
+      },
+      {
+        "annee": "Depuis 2018",
+        "titre": "Cabinet indépendant à Mont-sur-Marchienne",
+        "detail": ""
+      },
+      {
+        "annee": "Depuis 2018",
+        "titre": "Assistant et chargé de cours",
+        "detail": "Belgian School of Osteopathy"
+      },
+      {
+        "annee": "Depuis 2014",
+        "titre": "Orthopédie-traumatologie",
+        "detail": "Hôpital Civil Marie Curie, Lodelinsart"
+      },
+      {
+        "annee": "2014–2015",
+        "titre": "Sporting de Charleroi",
+        "detail": "Kinésithérapeute de l'équipe première"
+      },
+      {
+        "annee": "Conférences",
+        "titre": "Lombalgie (Kinéac, 2024), neurodynamique (AMISEK, 2018)",
+        "detail": ""
+      }
+    ]
+  },
+  "lieux": [
+    {
+      "etiquette": "Ostéopathie",
+      "titre": "Cabinet de Mont-sur-Marchienne",
+      "adresse": "Avenue Paul Pastur 204\n6032 Mont-sur-Marchienne",
+      "texte": "",
+      "lien_carte": "https://www.google.com/maps/search/?api=1&query=Avenue%20Paul%20Pastur%20204%2C%206032%20Charleroi"
+    },
+    {
+      "etiquette": "Kinésithérapie",
+      "titre": "Hôpital Civil Marie Curie",
+      "adresse": "Chaussée de Bruxelles 140\n6042 Lodelinsart",
+      "texte": "",
+      "lien_carte": "https://www.google.com/maps/search/?api=1&query=H%C3%B4pital%20Civil%20Marie%20Curie%20Lodelinsart"
+    },
+    {
+      "etiquette": "Kiné à domicile",
+      "titre": "Je me déplace chez vous",
+      "adresse": "",
+      "texte": "Charleroi, Marcinelle, Mont-sur-Marchienne, Montigny-le-Tilleul. Sur prescription médicale. Appelez pour vérifier que votre adresse est desservie.",
+      "lien_carte": ""
+    }
+  ],
+  "avis": {
+    "citation": "Très compétent, à l'écoute.",
+    "auteur": "P. B.",
+    "lien_google": "https://www.google.be/maps/place/Thomas+Lecuy+-+Osteopathe+D.O,+Osteopathe+du+Sport/@50.3929352,4.4121838,15z/data=!4m5!3m4!1s0x0:0x2d0aed577e2cce4e!8m2!3d50.39293!4d4.4121903?hl=fr"
+  },
+  "partenaire": {
+    "nom": "CrossFit MLT",
+    "texte": "Box partenaire pour la préparation physique et le retour au sport après une blessure.",
+    "lien": "https://crossfitmlt.be/"
+  },
+  "contact": {
+    "texte": "Le plus simple est d'appeler ou d'envoyer un SMS. Laissez un message si je suis en séance, je vous rappelle.",
+    "adresse_pied_de_page": "Avenue Paul Pastur 204, 6032 Charleroi"
+  }
+}

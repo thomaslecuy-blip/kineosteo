@@ -1,0 +1,249 @@
+---
+permalink: /index.html
+---
+{%- set s = site -%}
+<!doctype html>
+<html lang="fr-BE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ s.nom }} · Ostéopathe et kinésithérapeute à Charleroi</title>
+<meta name="description" content="{{ s.description_google }}">
+<link rel="canonical" href="{{ s.url }}/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:title" content="{{ s.nom }} · Ostéopathe D.O et kinésithérapeute à Charleroi">
+<meta property="og:description" content="{{ s.description_google }}">
+<meta property="og:url" content="{{ s.url }}/">
+{%- if s.accueil.photo %}
+<meta property="og:image" content="{{ s.url }}{{ s.accueil.photo }}">
+{%- endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "{{ s.url }}/#thomas",
+      "name": {{ s.nom | dump | safe }},
+      "jobTitle": ["Ostéopathe D.O", "Kinésithérapeute"],
+      "url": "{{ s.url }}/",
+      "telephone": "{{ s.telephone | telLink }}",
+      "email": "{{ s.email }}",
+      "sameAs": ["https://instagram.com/{{ s.instagram }}/"],
+      {%- if s.accueil.photo %}"image": "{{ s.url }}{{ s.accueil.photo }}",{% endif %}
+      "alumniOf": [
+        {"@type": "CollegeOrUniversity", "name": "Belgian School of Osteopathy"},
+        {"@type": "CollegeOrUniversity", "name": "Haute École Condorcet"},
+        {"@type": "CollegeOrUniversity", "name": "UCLouvain"}
+      ],
+      "knowsAbout": ["Ostéopathie", "Kinésithérapie", "Thérapie manuelle", "Lombalgie", "Cervicalgie", "Épaule douloureuse", "Blessures du sportif", "Rééducation"],
+      "worksFor": {"@id": "{{ s.url }}/#cabinet"}
+    },
+    {
+      "@type": ["MedicalBusiness", "Physiotherapy"],
+      "@id": "{{ s.url }}/#cabinet",
+      "name": "{{ s.nom }} · Ostéopathe D.O et kinésithérapeute",
+      "description": {{ s.description_google | dump | safe }},
+      "url": "{{ s.url }}/",
+      "telephone": "{{ s.telephone | telLink }}",
+      "email": "{{ s.email }}",
+      {%- if s.accueil.photo %}"image": "{{ s.url }}{{ s.accueil.photo }}",{% endif %}
+      "medicalSpecialty": ["Osteopathic", "PhysicalTherapy"],
+      "address": {"@type": "PostalAddress", "streetAddress": "Avenue Paul Pastur 204", "postalCode": "6032", "addressLocality": "Mont-sur-Marchienne (Charleroi)", "addressCountry": "BE"},
+      "geo": {"@type": "GeoCoordinates", "latitude": 50.39293, "longitude": 4.4121903},
+      "areaServed": ["Charleroi", "Marcinelle", "Mont-sur-Marchienne", "Montigny-le-Tilleul", "Lodelinsart"],
+      "founder": {"@id": "{{ s.url }}/#thomas"},
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Avenue%20Paul%20Pastur%20204%2C%206032%20Charleroi",
+      "sameAs": ["https://instagram.com/{{ s.instagram }}/", {{ s.avis.lien_google | dump | safe }}],
+      "availableService": [
+        {%- for soin in s.soins %}
+        {"@type": "MedicalTherapy", "name": {{ soin.titre | dump | safe }}, "description": {{ (soin.points | join(". ")) | dump | safe }}}{% if not loop.last %},{% endif %}
+        {%- endfor %}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {%- for l in s.comparatif.lignes %}
+        {"@type": "Question", "name": {{ ("Ostéopathie ou kinésithérapie : " + l.critere + " ?") | dump | safe }},
+         "acceptedAnswer": {"@type": "Answer", "text": {{ ("Ostéopathie : " + l.osteo + ". Kinésithérapie : " + l.kine + ".") | dump | safe }}}},
+        {%- endfor %}
+        {"@type": "Question", "name": "Où consulter Thomas Lecuy ?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Ostéopathie au cabinet de Mont-sur-Marchienne (Avenue Paul Pastur 204, 6032 Charleroi), kinésithérapie à l'Hôpital Civil Marie Curie (Chaussée de Bruxelles 140, 6042 Lodelinsart) et kinésithérapie à domicile à Charleroi, Marcinelle, Mont-sur-Marchienne et Montigny-le-Tilleul."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top"><b>{{ s.nom }}</b><span>{{ s.titre }}</span></a>
+    <nav aria-label="Navigation principale">
+      <a href="#soins">Soins</a><a href="#choisir">Que choisir ?</a><a href="#parcours">Parcours</a><a href="#lieux">Où ?</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-solid" href="tel:{{ s.telephone | telLink }}">{{ s.telephone }}</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero{% if not s.accueil.photo %} solo{% endif %}">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">{{ s.accueil.zone }}</p>
+      <h1 style="margin-top:14px">{{ s.accueil.titre }}</h1>
+      <p class="lead">{{ s.accueil.texte }}</p>
+      <div class="ctas">
+        <a class="btn btn-solid" href="tel:{{ s.telephone | telLink }}">Prendre rendez-vous</a>
+        <a class="btn btn-ghost" href="#lieux">Voir les adresses</a>
+      </div>
+      <div class="facts">
+        {%- for p in s.accueil.points_forts %}
+        <span><b>{{ p.gras }}</b> {{ p.texte }}</span>
+        {%- endfor %}
+      </div>
+    </div>
+    {%- if s.accueil.photo %}
+    <img class="photo-img" src="{{ s.accueil.photo }}" alt="{{ s.nom }}, ostéopathe et kinésithérapeute à Charleroi" width="800" height="1000">
+    {%- endif %}
+  </div>
+</section>
+
+<section class="soins" id="soins">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Soins</p>
+      <h2>Ostéopathie et kinésithérapie à Charleroi</h2>
+    </div>
+    <div class="cards">
+      {%- for soin in s.soins %}
+      <article class="card">
+        {%- if soin.photo %}<img class="photo-img" src="{{ soin.photo }}" alt="{{ soin.titre }} à Charleroi" loading="lazy" width="600" height="400">{% endif %}
+        <h3>{{ soin.titre }}</h3>
+        <ul>{% for p in soin.points %}<li>{{ p }}</li>{% endfor %}</ul>
+        <p class="who">{{ soin.infos }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="choisir">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Que choisir ?</p>
+      <h2>Ostéopathie ou kinésithérapie ?</h2>
+      <p>{{ s.comparatif.intro }}</p>
+    </div>
+    <div class="compare">
+      <table>
+        <thead><tr><th scope="col"><span class="sr">Critère</span></th><th scope="col">Ostéopathie</th><th scope="col">Kinésithérapie</th></tr></thead>
+        <tbody>
+          {%- for l in s.comparatif.lignes %}
+          <tr><th scope="row">{{ l.critere }}</th><td>{{ l.osteo }}</td><td>{{ l.kine }}</td></tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="steps-grid">
+      <div class="steps">
+        <h3>Déroulement d'une séance d'ostéopathie</h3>
+        <ol>{% for e in s.comparatif.seance_osteo %}<li>{{ e }}</li>{% endfor %}</ol>
+      </div>
+      <div class="steps">
+        <h3>Déroulement d'une prise en charge en kiné</h3>
+        <ol>{% for e in s.comparatif.seance_kine %}<li>{{ e }}</li>{% endfor %}</ol>
+      </div>
+    </div>
+    {%- if s.comparatif.remarque %}<p class="note">{{ s.comparatif.remarque }}</p>{% endif %}
+  </div>
+</section>
+
+<section class="soins" id="parcours">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Par qui ?</p>
+      <h2>{{ s.nom }}</h2>
+      <p>{{ s.parcours.intro }}</p>
+    </div>
+    <div class="cv">
+      <div>
+        <h3>Diplômes et formations</h3>
+        <ul class="tl">
+          {%- for f in s.parcours.formations %}
+          <li><time>{{ f.annee }}</time><div>{{ f.titre }}{% if f.detail %}<small>{{ f.detail }}</small>{% endif %}</div></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      <div>
+        <h3>Expérience</h3>
+        <ul class="tl">
+          {%- for f in s.parcours.experiences %}
+          <li><time>{{ f.annee }}</time><div>{{ f.titre }}{% if f.detail %}<small>{{ f.detail }}</small>{% endif %}</div></li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lieux" id="lieux">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Où ?</p>
+      <h2>Deux adresses et des visites à domicile</h2>
+    </div>
+    <div class="places">
+      {%- for l in s.lieux %}
+      <div class="place">
+        <span class="tag">{{ l.etiquette }}</span>
+        <h3>{{ l.titre }}</h3>
+        {%- if l.adresse %}<address>{{ l.adresse | replace("\n", "<br>") | safe }}</address>{% endif %}
+        {%- if l.texte %}<p>{{ l.texte }}</p>{% endif %}
+        {%- if l.lien_carte %}<a href="{{ l.lien_carte }}" target="_blank" rel="noopener">Itinéraire Google Maps</a>{% endif %}
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap duo">
+    <div class="quote">
+      <p class="eyebrow" style="color:inherit;opacity:.8">Avis Google</p>
+      <blockquote>« {{ s.avis.citation }} »</blockquote>
+      <p class="src">{{ s.avis.auteur }} · <a href="{{ s.avis.lien_google }}" target="_blank" rel="noopener">Voir les avis ou laisser le vôtre</a></p>
+    </div>
+    <div class="partner">
+      <p class="eyebrow">Partenaire</p>
+      <h3>{{ s.partenaire.nom }}</h3>
+      <p>{{ s.partenaire.texte }}</p>
+      <a href="{{ s.partenaire.lien }}" target="_blank" rel="noopener">{{ s.partenaire.lien | replace("https://", "") | replace("/", "") }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Contact</p>
+      <h2>Prendre rendez-vous</h2>
+      <p>{{ s.contact.texte }}</p>
+    </div>
+    <div class="contact-grid">
+      <div class="ci"><span>Téléphone</span><a href="tel:{{ s.telephone | telLink }}">{{ s.telephone }}</a></div>
+      <div class="ci"><span>E-mail</span><a href="mailto:{{ s.email }}">{{ s.email }}</a></div>
+      <div class="ci"><span>Instagram</span><a href="https://instagram.com/{{ s.instagram }}/" target="_blank" rel="noopener">@{{ s.instagram }}</a></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© {{ "" | year }} {{ s.nom }} · {{ s.titre }}</span><span>{{ s.contact.adresse_pied_de_page }}</span></div></footer>
+</body>
+</html>

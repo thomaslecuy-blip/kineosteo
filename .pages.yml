@@ -1,0 +1,111 @@
+# Configuration de l'éditeur Pages CMS (https://app.pagescms.org)
+media:
+  input: src/images
+  output: /images
+  extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: site
+    label: Contenu du site
+    type: file
+    path: src/_data/site.json
+    format: json
+    fields:
+      - { name: url, label: "Adresse du site (ne pas modifier)", type: string, hidden: true }
+      - { name: nom, label: Nom, type: string }
+      - { name: titre, label: "Titre sous le nom", type: string }
+      - { name: description_google, label: "Description pour Google (1 phrase)", type: text }
+      - { name: telephone, label: Téléphone, type: string }
+      - { name: email, label: E-mail, type: string }
+      - { name: instagram, label: "Compte Instagram (sans @)", type: string }
+      - name: accueil
+        label: Haut de page
+        type: object
+        fields:
+          - { name: zone, label: "Petite ligne au-dessus du titre", type: string }
+          - { name: titre, label: Grand titre, type: string }
+          - { name: texte, label: Texte d'accroche, type: text }
+          - { name: photo, label: Photo portrait, type: image }
+          - name: points_forts
+            label: Points forts
+            type: object
+            list: true
+            fields:
+              - { name: gras, label: En gras, type: string }
+              - { name: texte, label: Suite, type: string }
+      - name: soins
+        label: Soins
+        type: object
+        list: true
+        fields:
+          - { name: titre, label: Titre, type: string }
+          - { name: photo, label: Photo, type: image }
+          - { name: points, label: "Points (un par ligne)", type: string, list: true }
+          - { name: infos, label: "Encadré (prescription, lieu)", type: text }
+      - name: comparatif
+        label: "Que choisir ?"
+        type: object
+        fields:
+          - { name: intro, label: Introduction, type: text }
+          - name: lignes
+            label: Lignes du tableau
+            type: object
+            list: true
+            fields:
+              - { name: critere, label: Critère, type: string }
+              - { name: osteo, label: Ostéopathie, type: text }
+              - { name: kine, label: Kinésithérapie, type: text }
+          - { name: seance_osteo, label: "Étapes d'une séance d'ostéo", type: string, list: true }
+          - { name: seance_kine, label: "Étapes d'une prise en charge en kiné", type: string, list: true }
+          - { name: remarque, label: Remarque, type: text }
+      - name: parcours
+        label: Parcours (CV)
+        type: object
+        fields:
+          - { name: intro, label: Introduction, type: text }
+          - name: formations
+            label: Diplômes et formations
+            type: object
+            list: true
+            fields:
+              - { name: annee, label: Année, type: string }
+              - { name: titre, label: Titre, type: string }
+              - { name: detail, label: Détail, type: string }
+          - name: experiences
+            label: Expérience
+            type: object
+            list: true
+            fields:
+              - { name: annee, label: Année, type: string }
+              - { name: titre, label: Titre, type: string }
+              - { name: detail, label: Détail, type: string }
+      - name: lieux
+        label: Adresses
+        type: object
+        list: true
+        fields:
+          - { name: etiquette, label: Étiquette, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: adresse, label: "Adresse (2 lignes)", type: text }
+          - { name: texte, label: Texte, type: text }
+          - { name: lien_carte, label: Lien Google Maps, type: string }
+      - name: avis
+        label: Avis Google
+        type: object
+        fields:
+          - { name: citation, label: Citation, type: text }
+          - { name: auteur, label: Auteur, type: string }
+          - { name: lien_google, label: Lien vers les avis Google, type: string }
+      - name: partenaire
+        label: Partenaire
+        type: object
+        fields:
+          - { name: nom, label: Nom, type: string }
+          - { name: texte, label: Texte, type: text }
+          - { name: lien, label: Lien, type: string }
+      - name: contact
+        label: Contact
+        type: object
+        fields:
+          - { name: texte, label: Texte, type: text }
+          - { name: adresse_pied_de_page, label: Adresse en bas de page, type: string }
