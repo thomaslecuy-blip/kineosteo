@@ -16,12 +16,12 @@ permalink: /index.html
 <meta property="og:description" content="{{ s.description_google }}">
 <meta property="og:url" content="{{ s.url }}/">
 {%- if s.accueil.photo %}
-<meta property="og:image" content="{{ s.url }}{{ s.accueil.photo }}">
+<meta property="og:image" content="{{ s.url }}/{{ s.accueil.photo | rel }}">
 {%- endif %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -35,7 +35,7 @@ permalink: /index.html
       "telephone": "{{ s.telephone | telLink }}",
       "email": "{{ s.email }}",
       "sameAs": ["https://instagram.com/{{ s.instagram }}/"],
-      {%- if s.accueil.photo %}"image": "{{ s.url }}{{ s.accueil.photo }}",{% endif %}
+      {%- if s.accueil.photo %}"image": "{{ s.url }}/{{ s.accueil.photo | rel }}",{% endif %}
       "alumniOf": [
         {"@type": "CollegeOrUniversity", "name": "Belgian School of Osteopathy"},
         {"@type": "CollegeOrUniversity", "name": "Haute École Condorcet"},
@@ -52,7 +52,7 @@ permalink: /index.html
       "url": "{{ s.url }}/",
       "telephone": "{{ s.telephone | telLink }}",
       "email": "{{ s.email }}",
-      {%- if s.accueil.photo %}"image": "{{ s.url }}{{ s.accueil.photo }}",{% endif %}
+      {%- if s.accueil.photo %}"image": "{{ s.url }}/{{ s.accueil.photo | rel }}",{% endif %}
       "medicalSpecialty": ["Osteopathic", "PhysicalTherapy"],
       "address": {"@type": "PostalAddress", "streetAddress": "Avenue Paul Pastur 204", "postalCode": "6032", "addressLocality": "Mont-sur-Marchienne (Charleroi)", "addressCountry": "BE"},
       "geo": {"@type": "GeoCoordinates", "latitude": 50.39293, "longitude": 4.4121903},
@@ -110,7 +110,7 @@ permalink: /index.html
       </div>
     </div>
     {%- if s.accueil.photo %}
-    <img class="photo-img" src="{{ s.accueil.photo }}" alt="{{ s.nom }}, ostéopathe et kinésithérapeute à Charleroi" width="800" height="1000">
+    <img class="photo-img" src="{{ s.accueil.photo | rel }}" alt="{{ s.nom }}, ostéopathe et kinésithérapeute à Charleroi" width="800" height="1000">
     {%- endif %}
   </div>
 </section>
@@ -124,7 +124,7 @@ permalink: /index.html
     <div class="cards">
       {%- for soin in s.soins %}
       <article class="card">
-        {%- if soin.photo %}<img class="photo-img" src="{{ soin.photo }}" alt="{{ soin.titre }} à Charleroi" loading="lazy" width="600" height="400">{% endif %}
+        {%- if soin.photo %}<img class="photo-img" src="{{ soin.photo | rel }}" alt="{{ soin.titre }} à Charleroi" loading="lazy" width="600" height="400">{% endif %}
         <h3>{{ soin.titre }}</h3>
         <ul>{% for p in soin.points %}<li>{{ p }}</li>{% endfor %}</ul>
         <p class="who">{{ soin.infos }}</p>

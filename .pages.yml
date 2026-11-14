@@ -1,7 +1,7 @@
 # Configuration de l'éditeur Pages CMS (https://app.pagescms.org)
 media:
   input: src/images
-  output: /images
+  output: images
   extensions: [jpg, jpeg, png, webp]
 
 content:
